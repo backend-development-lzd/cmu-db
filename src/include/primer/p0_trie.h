@@ -37,7 +37,11 @@ class TrieNode {
    *
    * @param key_char Key character of this trie node
    */
-  explicit TrieNode(char key_char) {}
+  explicit TrieNode(char key_char) {
+    this->key_char_ = key_char;
+    this->is_end_ = false;
+    this->children_.clear();
+  }
 
   /**
    * TODO(P0): Add implementation
@@ -261,6 +265,7 @@ class Trie {
    */
   template <typename T>
   bool Insert(const std::string &key, T value) {
+
     return false;
   }
 
