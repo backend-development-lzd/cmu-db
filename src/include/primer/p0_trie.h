@@ -9,6 +9,12 @@
 // Copyright (c) 2015-2022, Carnegie Mellon University Database Group
 //
 //===----------------------------------------------------------------------===//
+// 拷贝构造函数 Copy Constructor
+// 拷贝赋值运算符 Copy Assignment operator
+// 析构函数 Destructor
+// 移动构造函数 Move Constructor
+// 移动赋值运算符 Move Assignment operator
+
 
 #pragma once
 
