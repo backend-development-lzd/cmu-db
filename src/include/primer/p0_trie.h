@@ -244,11 +244,7 @@ class TrieNodeWithValue : public TrieNode {
    * @param key_char Key char of this node
    * @param value Value of this node
    */
-  TrieNodeWithValue(char key_char, T value) {
-    this->key_char_ = key_char;
-    this->value_ = value;
-    this->is_end_ = true;
-    this->children_.clear();
+  TrieNodeWithValue(char key_char, T value): TrieNode(key_char),value_(value) {
   }
 
 
@@ -290,7 +286,8 @@ class Trie {
    *
    * @brief Insert key-value pair into the trie.
    *
-   * If the key is an empty string, return false immediately.
+   * if key="" return false
+   *
    *
    * If the key already exists, return false. Duplicated keys are not allowed and
    * you should never overwrite value of an existing key.
@@ -379,7 +376,7 @@ class Trie {
     }else{
       for(int i=trav_path.size()-1;i>=0;i--){
         auto pre=trav_path[i];
-        if (node->get()->IsEndNode()) {  // TODO
+        if (i<static_cast<int>(key.size()-1)&&(node->get()->IsEndNode()||node->get()->HasChildren())) {  // TODO
           break;
         }
         pre->get()->RemoveChildNode(key[i]);

@@ -17,8 +17,9 @@
 #include <thread>  // NOLINT
 
 #include "common/exception.h"
-#include "gtest/gtest.h"
 #include "primer/p0_trie.h"
+#include "gtest/gtest.h"
+//#include "googletest/googletest/include/gtest/gtest.h"
 
 namespace bustub {
 
@@ -49,6 +50,7 @@ TEST(StarterTest, DISABLED_TrieNodeInsertTest) {
   auto child_node = t.InsertChildNode('b', std::make_unique<TrieNode>('b'));
   EXPECT_NE(child_node, nullptr);
   EXPECT_EQ((*child_node)->GetKeyChar(), 'b');
+
 
   child_node = t.InsertChildNode('b', std::make_unique<TrieNode>('b'));
   EXPECT_EQ(child_node, nullptr);

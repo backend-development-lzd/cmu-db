@@ -20,7 +20,7 @@
 #include "concurrency/transaction_manager.h"
 #include "execution/execution_engine.h"
 #include "execution/executor_context.h"
-#include "gtest/gtest.h"
+//#include "gtest/gtest.h"
 #include "logging/common.h"
 #include "recovery/checkpoint_manager.h"
 #include "recovery/log_manager.h"
@@ -29,6 +29,8 @@
 #include "storage/table/table_heap.h"
 #include "storage/table/table_iterator.h"
 #include "storage/table/tuple.h"
+#include "googletest/googletest/include/gtest/gtest.h"
+
 
 namespace bustub {
 
